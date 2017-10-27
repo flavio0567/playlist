@@ -1,0 +1,28 @@
+<article>
+
+  <h2><%= @user.first_name %> <%= @user.last_name %>'s Playlist</h2>
+  </br></br>
+
+  </br>
+  <table class="table table-striped table-hover ">
+
+	<thead>
+		<tr>
+			<th>Artist</th>
+			<th>Title</th>
+			<th>Times Added</th>
+		</tr>
+	</thead>
+    <% @song.users.each do |song| %>
+      <tr>
+        <td class="col-md-1"><%= song.artist  %> </td>
+        <td class="col-md-2"><%= song.title  %> </td>
+        <td class="col-md-2"><%= song.joins.count %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<%= link_to "Dashboard", songs_path %>
+
+
+</article>
